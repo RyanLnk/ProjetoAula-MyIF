@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\dev\\ProjetoAPIC#\\MyIF\\MyIF.csproj": {}
+    "c:\\dev\\ProjetoAPIC#\\MyIF\\MyIF.csproj": {}
   },
   "projects": {
-    "C:\\dev\\ProjetoAPIC#\\MyIF\\MyIF.csproj": {
+    "c:\\dev\\ProjetoAPIC#\\MyIF\\MyIF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\ProjetoAPIC#\\MyIF\\MyIF.csproj",
+        "projectUniqueName": "c:\\dev\\ProjetoAPIC#\\MyIF\\MyIF.csproj",
         "projectName": "MyIF",
-        "projectPath": "C:\\dev\\ProjetoAPIC#\\MyIF\\MyIF.csproj",
+        "projectPath": "c:\\dev\\ProjetoAPIC#\\MyIF\\MyIF.csproj",
         "packagesPath": "C:\\Users\\ryanl\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\ProjetoAPIC#\\MyIF\\obj\\",
+        "outputPath": "c:\\dev\\ProjetoAPIC#\\MyIF\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ryanl\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -38,6 +38,20 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.4, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
