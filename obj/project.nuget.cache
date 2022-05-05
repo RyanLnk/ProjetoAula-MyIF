@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LrVv+GeTJMw13exVEcYtt0ChL9Qb0USTVKZb0MyI8RbILw6SrqppcCR/bLkcjASeXEXgy5pVREcyDHIvhra0CQ==",
+  "dgSpecHash": "8tK8Hj3mCjlzR6F94GzvpMjiuXG5/FnyVCWsQVlwU1LqaIMsQvdzHmN2nV4D0gZMcVZdvyG6/j82rdOZcgYpvA==",
   "success": true,
-  "projectFilePath": "c:\\dev\\ProjetoAPIC#\\MyIF\\MyIF.csproj",
+  "projectFilePath": "C:\\dev\\ProjetoAPIC#\\MyIF\\MyIF.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ryanl\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ryanl\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.4\\microsoft.entityframeworkcore.6.0.4.nupkg.sha512",

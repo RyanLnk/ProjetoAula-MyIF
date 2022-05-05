@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\dev\\ProjetoAPIC#\\MyIF\\MyIF.csproj": {}
+    "C:\\dev\\ProjetoAPIC#\\MyIF\\MyIF.csproj": {}
   },
   "projects": {
-    "c:\\dev\\ProjetoAPIC#\\MyIF\\MyIF.csproj": {
+    "C:\\dev\\ProjetoAPIC#\\MyIF\\MyIF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\dev\\ProjetoAPIC#\\MyIF\\MyIF.csproj",
+        "projectUniqueName": "C:\\dev\\ProjetoAPIC#\\MyIF\\MyIF.csproj",
         "projectName": "MyIF",
-        "projectPath": "c:\\dev\\ProjetoAPIC#\\MyIF\\MyIF.csproj",
+        "projectPath": "C:\\dev\\ProjetoAPIC#\\MyIF\\MyIF.csproj",
         "packagesPath": "C:\\Users\\ryanl\\.nuget\\packages\\",
-        "outputPath": "c:\\dev\\ProjetoAPIC#\\MyIF\\obj\\",
+        "outputPath": "C:\\dev\\ProjetoAPIC#\\MyIF\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ryanl\\AppData\\Roaming\\NuGet\\NuGet.Config"
