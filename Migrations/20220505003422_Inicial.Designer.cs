@@ -11,7 +11,7 @@ using MyIF.Data;
 namespace MyIF.Migrations
 {
     [DbContext(typeof(MyIFContext))]
-    [Migration("20220504014133_Inicial")]
+    [Migration("20220505003422_Inicial")]
     partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -37,13 +37,15 @@ namespace MyIF.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Descricao")
-                        .HasColumnType("longtext");
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("Nome")
-                        .HasColumnType("longtext");
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
 
                     b.Property<decimal>("Preco")
-                        .HasColumnType("decimal(65,30)");
+                        .HasColumnType("decimal(12,2)");
 
                     b.HasKey("Id");
 
