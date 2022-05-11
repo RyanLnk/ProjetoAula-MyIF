@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using MyIF.Data;
 using MyIF.Models;
+using MyIF.Services;
 
 namespace MyIF.Controllers;
 
@@ -8,16 +8,23 @@ namespace MyIF.Controllers;
 [Route("cursos")]
 public class CursoController : ControllerBase
 {
-  [HttpGet]
-  public ActionResult<List<Curso>> GetCursos([FromServices] MyIFContext context)
+  private readonly CursoService _cursoService;
+  public CursoController([FromServices] CursoService cursoService)
   {
-    return Ok(context.Cursos.ToList());
+    _cursoService = cursoService;
+  }
+
+  [HttpGet]
+  public ActionResult<List<Curso>> GetCurso()
+  {
+    var cursos = _cursoService.GetCursos();
+    return Ok(cursos);
   }
 
   [HttpGet("{id:int}")]
-  public ActionResult<Curso> GetCurso([FromRoute] int id, [FromServices] MyIFContext context)
+  public ActionResult<Curso> GetCurso([FromRoute] int id)
   {
-    var curso = context.Cursos.SingleOrDefault(c => c.Id == id);
+    Curso curso = _cursoService.GetCurso(id);
 
     if (curso is null)
       return NotFound();
@@ -26,14 +33,9 @@ public class CursoController : ControllerBase
   }
 
   [HttpPost]
-  public ActionResult<Curso> PostCurso([FromBody] Curso curso, [FromServices] MyIFContext context)
+  public ActionResult<Curso> PostCurso([FromBody] Curso c)
   {
-    var dataAgora = DateTime.Now;
-    curso.DataCriacao = dataAgora;
-    curso.DataAtualizacao = dataAgora;
-
-    context.Cursos.Add(curso);
-    context.SaveChanges();
+    var curso = _cursoService.PostCurso(c);
     return CreatedAtAction(nameof(GetCurso), new { id = curso.Id }, curso);
   }
 }

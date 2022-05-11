@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using MyIF.Data;
+using MyIF.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,11 +8,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 //Configurações para utilizar o banco de dados
 builder.Services.AddDbContext<MyIFContext>(
-    options => options.UseMySql(
-        builder.Configuration.GetConnectionString("DB"),
-        ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DB"))
-    )
+  options => options.UseMySql(
+    builder.Configuration.GetConnectionString("DB"),
+    ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DB"))
+  )
 );
+builder.Services.AddScoped<CursoService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
