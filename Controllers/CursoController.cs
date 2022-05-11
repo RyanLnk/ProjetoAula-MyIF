@@ -9,20 +9,24 @@ namespace MyIF.Controllers;
 public class CursoController : ControllerBase
 {
   [HttpGet]
-  public List<Curso> GetCursos([FromServices] MyIFContext context)
+  public ActionResult<List<Curso>> GetCursos([FromServices] MyIFContext context)
   {
-    return context.Cursos.ToList();
+    return Ok(context.Cursos.ToList());
   }
 
   [HttpGet("{id:int}")]
-  public Curso GetCurso([FromRoute] int id, [FromServices] MyIFContext context)
+  public ActionResult<Curso> GetCurso([FromRoute] int id, [FromServices] MyIFContext context)
   {
     var curso = context.Cursos.SingleOrDefault(c => c.Id == id);
-    return curso;
+
+    if (curso is null)
+      return NotFound();
+
+    return Ok(curso);
   }
 
   [HttpPost]
-  public Curso PostCurso([FromBody] Curso curso, [FromServices] MyIFContext context)
+  public ActionResult<Curso> PostCurso([FromBody] Curso curso, [FromServices] MyIFContext context)
   {
     var dataAgora = DateTime.Now;
     curso.DataCriacao = dataAgora;
@@ -30,6 +34,6 @@ public class CursoController : ControllerBase
 
     context.Cursos.Add(curso);
     context.SaveChanges();
-    return curso;
+    return CreatedAtAction(nameof(GetCurso), new { id = curso.Id }, curso);
   }
 }
