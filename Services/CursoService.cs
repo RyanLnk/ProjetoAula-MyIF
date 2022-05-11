@@ -40,4 +40,22 @@ public class CursoService
 
     return curso;
   }
+
+  public Curso PutCurso(int id, Curso c)
+  {
+    var curso = _context.Cursos.SingleOrDefault(c => c.Id == id);
+
+    if (curso is null)
+      return null;
+
+    curso.Nome = c.Nome;
+    curso.Descricao = c.Descricao;
+    curso.Preco = c.Preco;
+    curso.CargaHoraria = c.CargaHoraria;
+    curso.DataAtualizacao = DateTime.Now;
+
+    _context.SaveChanges();
+
+    return curso;
+  }
 }

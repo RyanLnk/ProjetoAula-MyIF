@@ -38,4 +38,15 @@ public class CursoController : ControllerBase
     var curso = _cursoService.PostCurso(c);
     return CreatedAtAction(nameof(GetCurso), new { id = curso.Id }, curso);
   }
+
+  [HttpPut("{id:int}")]
+  public ActionResult<Curso> PutCurso([FromRoute] int id, [FromBody] Curso c)
+  {
+    var curso = _cursoService.PutCurso(id, c);
+
+    if (curso is null)
+      return NotFound();
+
+    return Ok(curso);
+  }
 }
