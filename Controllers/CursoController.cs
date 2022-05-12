@@ -49,4 +49,18 @@ public class CursoController : ControllerBase
 
     return Ok(curso);
   }
+
+  [HttpDelete("{id:int}")]
+  public ActionResult DeleteCurso([FromRoute] int id)
+  {
+    try
+    {
+      _cursoService.DeleteCurso(id);
+      return NoContent();
+    }
+    catch (Exception)
+    {
+      return NotFound();
+    }
+  }
 }

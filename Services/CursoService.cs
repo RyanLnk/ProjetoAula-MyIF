@@ -58,4 +58,15 @@ public class CursoService
 
     return curso;
   }
+
+  public void DeleteCurso(int id)
+  {
+    var curso = _context.Cursos.SingleOrDefault(c => c.Id == id);
+
+    if (curso is null)
+      throw new Exception("Curso não encontrado");
+
+    _context.Remove(curso);
+    _context.SaveChanges();
+  }
 }
